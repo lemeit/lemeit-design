@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>lemeit.ar — Sistema de diseño</title>
+<link rel="stylesheet" href="lemeit-theme.css">
+<style>
+  body { margin: 0; }
+  main { max-width: 900px; margin: 0 auto; padding: 24px 20px 60px; }
+  section { margin-bottom: 40px; }
+  h2 { font-size: 15px; text-transform: uppercase; letter-spacing: .06em; color: var(--lm-text-dim); margin: 0 0 14px; }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
+  .swatch { border: 1px solid var(--lm-border); border-radius: var(--lm-radius-sm); overflow: hidden; }
+  .swatch-color { height: 56px; }
+  .swatch-label { padding: 6px 8px; font-family: var(--lm-font-mono); font-size: 10px; }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .cards-demo { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; }
+  p.desc { color: var(--lm-text-dim); font-size: 13px; line-height: 1.6; max-width: 640px; }
+  code { font-family: var(--lm-font-mono); background: var(--lm-surface-2); padding: 1px 5px; border-radius: 4px; font-size: 12px; }
+  pre { background: var(--lm-surface-2); border: 1px solid var(--lm-border); border-radius: var(--lm-radius-sm); padding: 12px 14px; overflow-x: auto; font-family: var(--lm-font-mono); font-size: 12px; line-height: 1.6; }
+</style>
+</head>
+<body class="lm-root">
+
+<header class="lm-header">
+  <div class="lm-logo">lemeit</div>
+  <div class="lm-header-mid">
+    <h1>Sistema de diseño</h1>
+    <p>design.lemeit.ar · compartido por emas / aq / wq / profe</p>
+  </div>
+  <div class="lm-header-right">
+    <div class="lm-switcher" id="lm-switcher">
+      <button class="lm-switcher-btn">Portales ⌄</button>
+      <div class="lm-switcher-menu"></div>
+    </div>
+    <button class="lm-theme-btn" id="lm-theme-btn" title="Cambiar tema"></button>
+  </div>
+</header>
+
+<main>
+
+  <section>
+    <h2>Qué es esto</h2>
+    <p class="desc">
+      Paleta, tipografía y componentes base compartidos entre los portales ambientales de lemeit.ar
+      (meteorología, aire, agua) y profe.lemeit.ar, de donde sale la paleta original. Un solo
+      <code>&lt;link&gt;</code> y <code>&lt;script&gt;</code> lo traen a cualquier sitio:
+    </p>
+    <pre>&lt;link rel="stylesheet" href="https://design.lemeit.ar/lemeit-theme.css"&gt;
+...
+&lt;script src="https://design.lemeit.ar/lemeit-common.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  LemeitCommon.initTheme();
+  LemeitCommon.initSwitcher("emas"); // "emas" | "aq" | "wq" | "profe"
+  LemeitCommon.renderFooter(document.getElementById("lm-footer"), { version: "v1.0 — 2026-08-22" });
+&lt;/script&gt;</pre>
+  </section>
+
+  <section>
+    <h2>Paleta</h2>
+    <p class="desc">Tomada de profe.lemeit.ar (tema PaperMod, paleta "X-Wing Poe Dameron"). Cambia sola con el toggle de arriba.</p>
+    <div class="swatches">
+      <div class="swatch"><div class="swatch-color" style="background:var(--lm-bg)"></div><div class="swatch-label">--lm-bg</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--lm-surface)"></div><div class="swatch-label">--lm-surface</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--lm-surface-2)"></div><div class="swatch-label">--lm-surface-2</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--lm-border)"></div><div class="swatch-label">--lm-border</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--lm-accent)"></div><div class="swatch-label" style="color:#fff;background:var(--lm-accent)">--lm-accent</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--lm-good)"></div><div class="swatch-label" style="color:#fff;background:var(--lm-good)">--lm-good</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--lm-moderate)"></div><div class="swatch-label" style="color:#fff;background:var(--lm-moderate)">--lm-moderate</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--lm-bad)"></div><div class="swatch-label" style="color:#fff;background:var(--lm-bad)">--lm-bad</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Tipografía</h2>
+    <p style="font-family:var(--lm-font-sans);font-size:22px;font-weight:600">Sans — títulos y texto de UI</p>
+    <p style="font-family:var(--lm-font-mono);font-size:16px">Mono — datos, timestamps, código (JetBrains Mono)</p>
+  </section>
+
+  <section>
+    <h2>Tarjetas / lecturas</h2>
+    <div class="cards-demo">
+      <div class="lm-card lm-hover">
+        <div class="lm-card-label">Temperatura</div>
+        <div class="lm-card-value">18.4<span class="lm-card-unit">°C</span></div>
+        <div class="lm-card-sub">22/08/2026 18:00</div>
+      </div>
+      <div class="lm-card lm-hover">
+        <div class="lm-card-label">PM2.5</div>
+        <div class="lm-card-value">5.8<span class="lm-card-unit">µg/m³</span></div>
+        <div class="lm-card-sub">22/08/2026 18:59</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Estados / badges</h2>
+    <div class="row">
+      <span class="lm-badge lm-badge-good"><span class="lm-dot lm-ok"></span> Buena</span>
+      <span class="lm-badge lm-badge-moderate">⚠ Moderada</span>
+      <span class="lm-badge lm-badge-bad"><span class="lm-dot lm-error"></span> No saludable</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Botones / selects</h2>
+    <div class="row">
+      <button class="lm-btn">Acción principal</button>
+      <button class="lm-btn lm-btn-ghost">Secundaria</button>
+      <select class="lm-select"><option>48 h</option><option>7 días</option><option>30 días</option></select>
+    </div>
+  </section>
+
+  <section>
+    <h2>Nav de tabs</h2>
+    <nav class="lm-nav" style="position:static;border-radius:var(--lm-radius-sm);border:1px solid var(--lm-border)">
+      <button class="lm-nav-btn active">Actuales</button>
+      <button class="lm-nav-btn">Histórico</button>
+      <button class="lm-nav-btn">Gráfico</button>
+      <button class="lm-nav-btn">Acerca de</button>
+    </nav>
+  </section>
+
+</main>
+
+<footer class="lm-footer" id="lm-footer"></footer>
+
+<script src="lemeit-common.js"></script>
+<script>
+  LemeitCommon.initTheme();
+  LemeitCommon.initSwitcher("profe");
+  LemeitCommon.renderFooter(document.getElementById("lm-footer"), {
+    version: "v1.0 — 2026-08-22",
+    extra: 'código en <a href="https://github.com/lemeit/lemeit-design" target="_blank">github.com/lemeit/lemeit-design</a>'
+  });
+</script>
+
+</body>
+</html>
