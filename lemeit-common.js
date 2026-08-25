@@ -22,8 +22,7 @@
   const SITES = [
     { key: "emas", nombre: "EMA Saladillo", desc: "Meteorología", url: "https://emas.lemeit.ar" },
     { key: "aq",   nombre: "Aire Saladillo", desc: "Calidad del aire", url: "https://aq.lemeit.ar" },
-    { key: "wq",   nombre: "Agua Saladillo", desc: "Calidad del agua · en desarrollo", url: "https://wq.lemeit.ar" },
-    { key: "profe",nombre: "profe.lemeit.ar", desc: "Sitio personal / docencia", url: "https://profe.lemeit.ar" },
+    { key: "wq",   nombre: "Agua Saladillo", desc: "Calidad del agua", url: "https://wq.lemeit.ar" },
   ];
 
   function initTheme(defaultTheme) {
