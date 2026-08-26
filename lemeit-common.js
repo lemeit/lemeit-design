@@ -72,13 +72,33 @@
     document.addEventListener("click", () => menu.classList.remove("open"));
   }
 
+  // opts.logos (opcional): [{ href, src, alt, title, dark }] — dark:true
+  // solo para un logo que sea un recorte blanco/transparente sin versión de
+  // color, que necesite el chip de fondo oscuro fijo (.lm-attrib-chip-dark).
+  // Si no se pasan logos, el footer queda exactamente como antes.
   function renderFooter(el, opts) {
     if (!el) return;
     opts = opts || {};
     const version = opts.version || "";
     const extra = opts.extra || "";
+    const logos = opts.logos || [];
+
+    const logosHtml = logos.length
+      ? `
+      <div class="lm-footer-logos lm-attrib-row lm-attrib-row-sm">
+        ${logos.map((l) => `
+          <a href="${l.href}" target="_blank" class="lm-attrib-chip${l.dark ? " lm-attrib-chip-dark" : ""}" title="${l.title || l.alt || ""}">
+            <img src="${l.src}" alt="${l.alt || ""}" height="15">
+          </a>
+        `).join("")}
+      </div>
+      <div class="lm-footer-divider"></div>
+    `
+      : "";
+
     el.innerHTML = `
-      <div>Proyecto <a href="https://profe.lemeit.ar" target="_blank">lemeit.ar</a>${extra ? " · " + extra : ""}</div>
+      ${logosHtml}
+      <div class="lm-footer-credit">Proyecto <a href="https://profe.lemeit.ar" target="_blank">lemeit.ar</a>${extra ? " · " + extra : ""}</div>
       ${version ? `<div class="lm-footer-version">${version}</div>` : ""}
     `;
   }
