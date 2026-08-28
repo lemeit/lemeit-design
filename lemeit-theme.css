@@ -330,6 +330,11 @@
 /* Variante chica, pensada para el footer */
 .lm-attrib-row-sm .lm-attrib-chip { padding: 5px 10px; }
 .lm-attrib-row-sm .lm-attrib-chip img { height: 15px; }
+/* Variante grande, pensada para paneles "Acerca de" — se diferencia tanto
+   del tamaño chico del footer como del tamaño por defecto (20px). */
+.lm-attrib-row-lg { gap: 14px; }
+.lm-attrib-row-lg .lm-attrib-chip { padding: 12px 20px; }
+.lm-attrib-row-lg .lm-attrib-chip img { height: 32px; }
 
 /* ═══════════════════════════════════════════
    FOOTER

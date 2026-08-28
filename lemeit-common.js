@@ -76,19 +76,26 @@
   // solo para un logo que sea un recorte blanco/transparente sin versión de
   // color, que necesite el chip de fondo oscuro fijo (.lm-attrib-chip-dark).
   // Si no se pasan logos, el footer queda exactamente como antes.
+  // opts.logoSize (opcional): "sm" (default, 15px — el tamaño de siempre) |
+  // "md" (20px, tamaño por defecto de .lm-attrib-chip) | "lg" (32px). Sirve
+  // para portales con pocos logos donde "sm" queda demasiado chico (ver
+  // emas.lemeit.ar, que usa "md" para los logos de proveedor de estación).
   function renderFooter(el, opts) {
     if (!el) return;
     opts = opts || {};
     const version = opts.version || "";
     const extra = opts.extra || "";
     const logos = opts.logos || [];
+    const logoSize = opts.logoSize || "sm";
+    const sizeClass = logoSize === "lg" ? " lm-attrib-row-lg" : logoSize === "md" ? "" : " lm-attrib-row-sm";
+    const imgHeight = logoSize === "lg" ? 32 : logoSize === "md" ? 20 : 15;
 
     const logosHtml = logos.length
       ? `
-      <div class="lm-footer-logos lm-attrib-row lm-attrib-row-sm">
+      <div class="lm-footer-logos lm-attrib-row${sizeClass}">
         ${logos.map((l) => `
           <a href="${l.href}" target="_blank" class="lm-attrib-chip${l.dark ? " lm-attrib-chip-dark" : ""}" title="${l.title || l.alt || ""}">
-            <img src="${l.src}" alt="${l.alt || ""}" height="15">
+            <img src="${l.src}" alt="${l.alt || ""}" height="${imgHeight}">
           </a>
         `).join("")}
       </div>
