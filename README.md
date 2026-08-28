@@ -20,10 +20,26 @@ Antes de cerrar `</body>`:
   LemeitCommon.initTheme();                 // aplica el tema guardado y conecta el botón #lm-theme-btn
   LemeitCommon.initSwitcher("emas");        // "emas" | "aq" | "wq" | "profe" — arma el menú #lm-switcher
   LemeitCommon.renderFooter(document.getElementById("lm-footer"), {
-    version: "v1.0 — 2026-08-22"
+    version: "v1.0 — 2026-08-22",
+    logos: [ // opcional — logos de redes/programas antes del texto de crédito
+      { href: "https://openaq.org", src: "https://design.lemeit.ar/logos/openaq.svg", alt: "OpenAQ", title: "OpenAQ" },
+    ],
+    logoSize: "sm", // opcional — "sm" (15px, default del footer) | "md" (20px) | "lg" (32px)
   });
 </script>
 ```
+
+### Atribución (`.lm-attrib-*`)
+
+Clases compartidas para mostrar logos de redes/programas asociados a un portal, en el footer (vía `renderFooter({logos, logoSize})`) y en cualquier otro lado (ej. la pestaña "Acerca de" de un portal), manteniendo el mismo look:
+
+| Clase | Tamaño de imagen | Uso típico |
+|-------|-------------------|------------|
+| `.lm-attrib-row .lm-attrib-row-sm` | 15px | Footer (default de `renderFooter()`) |
+| `.lm-attrib-row` (sin modificador) | 20px | Uso intermedio — ej. footer de un portal con pocos logos que "sm" deja demasiado chico (`logoSize: "md"`) |
+| `.lm-attrib-row .lm-attrib-row-lg` | 32px | Paneles "Acerca de" — para diferenciarse visualmente del footer |
+
+`.lm-attrib-chip-dark` es un modificador aparte, para un logo que solo tenga versión blanca/transparente (sin versión de color) y necesite un fondo oscuro fijo para leerse — no depende del tema del sitio (`opts.logos[].dark: true` en `renderFooter()`).
 
 ## Archivos
 
