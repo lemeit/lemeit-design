@@ -105,7 +105,7 @@
 
     el.innerHTML = `
       ${logosHtml}
-      <div class="lm-footer-credit">Proyecto <a href="https://profe.lemeit.ar" target="_blank">lemeit.ar</a>${extra ? " · " + extra : ""}</div>
+      <div class="lm-footer-credit">Proyecto <a href="https://profe.lemeit.ar" target="_blank">lemeit.ar</a> · <a href="https://wiki.lemeit.ar" target="_blank">Wiki / documentación</a>${extra ? " · " + extra : ""}</div>
       ${version ? `<div class="lm-footer-version">${version}</div>` : ""}
     `;
   }
