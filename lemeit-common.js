@@ -59,7 +59,7 @@
     if (!btn || !menu) return;
 
     menu.innerHTML = SITES.map((s) => `
-      <a href="${s.url}" ${s.key === currentKey ? 'class="lm-current"' : ""}>
+      <a href="${s.url}" target="_blank" rel="noopener" ${s.key === currentKey ? 'class="lm-current"' : ""}>
         ${s.nombre}
         <span>${s.desc}</span>
       </a>
