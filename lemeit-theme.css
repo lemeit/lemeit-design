@@ -30,6 +30,13 @@
   --lm-bad:         #A33131;
   --lm-shadow:      rgba(43, 30, 20, 0.08);
 
+  /* — Chips de metadata estilo shields.io (ver sección CHIPS más abajo) —
+     fijos, no cambian con el tema claro/oscuro, igual que un badge real
+     de shields.io. */
+  --lm-chip-label:  #555555;
+  --lm-chip-value:  #009688;
+  --lm-chip-accent: #FF5722;
+
   /* — Tipografía — */
   --lm-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -266,6 +273,33 @@
 .lm-dot.lm-ok { background: var(--lm-good); animation: lm-pulse 2s ease-in-out infinite; }
 .lm-dot.lm-error { background: var(--lm-bad); }
 @keyframes lm-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+
+/* ═══════════════════════════════════════════
+   CHIPS DE METADATA (estilo shields.io — label gris + valor verde-azulado,
+   con naranja como acento opcional). Para metadata fija de un proyecto
+   ("sitio | aq.lemeit.ar", "docs | wiki.lemeit.ar", "licencia | MIT"), no
+   para estado — para eso está .lm-badge de arriba. Pensado para encabezar
+   el README de cada repo y, portado acá, para usarse también en la propia
+   página (ej. footer o tarjeta "Acerca de").
+═══════════════════════════════════════════ */
+.lm-chip {
+  display: inline-flex;
+  align-items: stretch;
+  font-family: var(--lm-font-mono);
+  font-size: 11px;
+  border-radius: 4px;
+  overflow: hidden;
+  line-height: 1.9;
+}
+.lm-chip-label,
+.lm-chip-value {
+  padding: 2px 8px;
+  color: #fff;
+  white-space: nowrap;
+}
+.lm-chip-label { background: var(--lm-chip-label); }
+.lm-chip-value { background: var(--lm-chip-value); }
+.lm-chip.lm-chip-accent .lm-chip-value { background: var(--lm-chip-accent); }
 
 /* ═══════════════════════════════════════════
    BOTONES / SELECTS

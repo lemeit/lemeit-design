@@ -45,7 +45,7 @@ Clases compartidas para mostrar logos de redes/programas asociados a un portal, 
 
 | Archivo | Contenido |
 |---------|-----------|
-| `lemeit-theme.css` | Variables de color (`--lm-*`), tipografía, y clases de componentes base (`.lm-card`, `.lm-badge-*`, `.lm-nav-btn`, `.lm-btn`, `.lm-select`, `.lm-footer`, etc.) |
+| `lemeit-theme.css` | Variables de color (`--lm-*`), tipografía, y clases de componentes base (`.lm-card`, `.lm-badge-*`, `.lm-chip` / `.lm-chip-accent`, `.lm-nav-btn`, `.lm-btn`, `.lm-select`, `.lm-footer`, etc.) |
 | `lemeit-common.js` | `LemeitCommon.initTheme()`, `.initSwitcher()`, `.renderFooter()` — ver `index.html` para un ejemplo completo de cada uno |
 | `index.html` | Página de documentación / muestra visual de todos los componentes — también es la home de design.lemeit.ar |
 
@@ -60,6 +60,10 @@ npx wrangler pages deploy . --project-name=lemeit-design
 ```
 
 Dominio custom (`design.lemeit.ar`) configurado en el proyecto Pages de Cloudflare, no en este repo.
+
+### Chips de metadata (`.lm-chip`)
+
+Combinación gris + verde + naranja de los badges tipo shields.io que encabezan el `README.md` de cada repo (label gris `#555` + valor verde-azulado `#009688`, con `#FF5722` naranja como acento opcional para destacar algo puntual, ej. "API: pública") — portada como componente reutilizable (`--lm-chip-label`/`--lm-chip-value`/`--lm-chip-accent` en `lemeit-theme.css`, demo en `index.html`). Colores fijos, no cambian con el tema claro/oscuro, igual que un badge real de shields.io. Distinto de `.lm-badge-good/moderate/bad` (que son de estado, no de metadata tipo "sitio/docs/API/licencia"). Todavía sin adoptar en ningún portal — queda disponible para cuando se use en un footer o tarjeta "Acerca de".
 
 ## Licencia
 
