@@ -65,6 +65,10 @@ Dominio custom (`design.lemeit.ar`) configurado en el proyecto Pages de Cloudfla
 
 Combinación gris + verde + naranja de los badges tipo shields.io que encabezan el `README.md` de cada repo (label gris `#555` + valor verde-azulado `#009688`, con `#FF5722` naranja como acento opcional para destacar algo puntual, ej. "API: pública") — portada como componente reutilizable (`--lm-chip-label`/`--lm-chip-value`/`--lm-chip-accent` en `lemeit-theme.css`, demo en `index.html`). Colores fijos, no cambian con el tema claro/oscuro, igual que un badge real de shields.io. Distinto de `.lm-badge-good/moderate/bad` (que son de estado, no de metadata tipo "sitio/docs/API/licencia"). Todavía sin adoptar en ningún portal — queda disponible para cuando se use en un footer o tarjeta "Acerca de".
 
+### Colores de marca por sitio (`--lm-site-*`)
+
+Cada portal de la Red Ambiental tiene su propio color de acento para el logo/ícono/favicon — distintos entre sí a propósito, para diferenciarlos a simple vista al alternar entre ellos con una sola app instalada (setiembre 2026). Misma familia tonal verde-azulado → celeste, colores fijos igual que los chips de arriba: `--lm-site-aq` (`#009688`, verde-azulado — Aire Escolar) y `--lm-site-emas` (`#0097A7`, celeste — EMAS). `--lm-site-wq` queda pendiente de asignar. Viven en `lemeit-theme.css`, separados de `--lm-chip-value` aunque hoy `--lm-site-aq` comparta valor con él — para no atar el significado de un componente de badges genérico a la identidad de un sitio puntual. El naranja general (`--lm-accent`, usado en el resto de la UI de cada portal) no cambia.
+
 ## Licencia
 
 MIT.
