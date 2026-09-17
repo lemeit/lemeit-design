@@ -19,10 +19,15 @@
 
   const THEME_KEY = "lemeit-theme";
 
+  // URLs bajo app.lemeit.ar (setiembre 2026) en vez de los subdominios
+  // sueltos de antes — mismo origen entre los 3 portales, para que el
+  // switcher navegue "para adentro" de la PWA instalada en vez de abrir el
+  // navegador al cambiar de portal (ver repo "gateway"). Los subdominios
+  // viejos (aq/emas/wq.lemeit.ar) siguen vivos, redirigen acá solos.
   const SITES = [
-    { key: "emas", nombre: "EMAS", desc: "Meteorología", url: "https://emas.lemeit.ar" },
-    { key: "aq",   nombre: "Aire Escolar", desc: "Calidad del aire", url: "https://aq.lemeit.ar" },
-    { key: "wq",   nombre: "Agua Saladillo", desc: "Calidad del agua", url: "https://wq.lemeit.ar" },
+    { key: "aq",   nombre: "Aire Escolar", desc: "Calidad del aire", url: "https://app.lemeit.ar/aq/" },
+    { key: "emas", nombre: "EMAS", desc: "Meteorología", url: "https://app.lemeit.ar/emas/" },
+    { key: "wq",   nombre: "Agua Saladillo", desc: "Calidad del agua", url: "https://app.lemeit.ar/wq/" },
   ];
 
   function initTheme(defaultTheme) {
