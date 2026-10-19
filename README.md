@@ -1,5 +1,9 @@
 # lemeit-design
 
+[![sitio: design.lemeit.ar](https://img.shields.io/badge/sitio-design.lemeit.ar-009688?style=flat-square&labelColor=555555)](https://design.lemeit.ar)
+[![docs: badges](https://img.shields.io/badge/docs-badges-009688?style=flat-square&labelColor=555555)](docs/badges.md)
+[![licencia: MIT](https://img.shields.io/badge/licencia-MIT-009688?style=flat-square&labelColor=555555)](#licencia)
+
 Sistema de diseño compartido para los portales ambientales de lemeit.ar — paleta, tipografía y componentes base tomados de [profe.lemeit.ar](https://profe.lemeit.ar) (tema PaperMod, paleta "X-Wing Poe Dameron": naranja óxido sobre crema en modo claro, negro cálido con acentos naranja en modo oscuro).
 
 Publicado en [design.lemeit.ar](https://design.lemeit.ar), que sirve como página de documentación y como origen de los dos archivos que consumen los demás sitios.
@@ -72,3 +76,7 @@ Cada portal de la Red Ambiental tiene su propio color de acento para el logo/íc
 ## Licencia
 
 MIT.
+
+### Tags para README de GitHub
+
+Usar el mismo patrón visual con imágenes enlazadas de Shields.io, estilo `flat-square` y colores explícitos de la paleta. Ver [la guía de tags y badges](docs/badges.md) para ejemplos Markdown, colores y su equivalente web `.lm-chip`.
