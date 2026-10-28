@@ -80,3 +80,11 @@ MIT.
 ### Tags para README de GitHub
 
 Usar el mismo patrón visual con imágenes enlazadas de Shields.io, estilo `flat-square` y colores explícitos de la paleta. Ver [la guía de tags y badges](docs/badges.md) para ejemplos Markdown, colores y su equivalente web `.lm-chip`.
+
+## Identidades de portada — octubre de 2026
+
+La portada [lemeit.ar](https://lemeit.ar/) aplica la paleta crema `#FAF7F2`, naranja óxido `#9B3D00` y verde azulado `#009688`, con texto de sistema y detalles JetBrains Mono. Implementa estos valores localmente; no se migró a los componentes compartidos ni se modificaron `lemeit-theme.css` o `lemeit-common.js`.
+
+Su favicon **Encuentro**, inspirado en el lenguaje gráfico de Feynman, se mantiene en `landing/favicon.svg` de `lemeit/eureka`. **Interacción** se conserva como alternativa en `docs/identidad-lemeit/favicon-interaccion.svg` del mismo repo. Flechas SVG orientadas automáticamente, con puntas ampliadas respecto del trazo. [Registro canónico](https://github.com/lemeit/eureka/blob/main/docs/identidad-lemeit/README.md) (repositorio privado).
+
+La L caligráfica es la identidad personal de Luciano Lamaita y se usa en su portal docente; no identifica a la marca paraguas Lemeit. Eureka mantiene su presentación azul noche/verde, con Space Mono y DM Sans, AI en superíndice y «ancora imparo — aún aprendo». Ver la [documentación pública de portadas](https://wiki.lemeit.ar/portal-lemeit/).
